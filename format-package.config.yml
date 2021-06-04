@@ -1,0 +1,18 @@
+order:
+  - name
+  - version
+  - description
+  - license
+  - author
+  - homepage
+  - bugs
+  - keywords
+  - main
+  - types
+  - scripts
+  - ...rest
+  - dependencies
+  - peerDependencies
+  - devDependencies
+  - optionalDependencies
+  - bundledDependencies

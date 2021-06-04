@@ -2,76 +2,67 @@
   "name": "@therealklanni/eslint-config",
   "version": "1.0.0-6",
   "description": "Shareable ESLint config",
-  "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
   "license": "MIT",
-  "main": "index.js",
+  "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
+  "homepage": "https://github.com/therealklanni/eslint/tree/master/packages/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/therealklanni/eslint/issues"
+  },
+  "keywords": [
+    "eslintconfig",
+    "therealklanni"
+  ],
+  "main": "lib/index.js",
   "scripts": {
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
+    "lint": "eslint .",
     "postinstall": "/usr/bin/env bash ./scripts/postinstall.sh",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
     "postrelease": "git push --follow-tags origin master && npm publish",
     "release:pre": "standard-version --prerelease",
     "postrelease:pre": "git push --follow-tags origin master && npm publish --tag prerelease"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged --verbose --pattern '**/*.{json,md,y{a}ml}' && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
   },
   "eslintConfig": {
     "extends": [
-      "./node",
-      "./prettier"
+      "./lib/prettier",
+      "./lib/node"
     ]
   },
   "eslintIgnore": [
     "test.js"
   ],
-  "prettier": "@therealklanni/prettier-config",
-  "keywords": [
-    "eslint",
-    "eslintconfig",
-    "eslint-config",
-    "therealklanni"
+  "files": [
+    "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/therealklanni/eslint-config.git"
+    "url": "git+https://github.com/therealklanni/eslint.git"
   },
-  "bugs": {
-    "url": "https://github.com/therealklanni/eslint-config/issues"
-  },
-  "homepage": "https://github.com/therealklanni/eslint-config#readme",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.27.0",
     "eslint-plugin-import": "^2.23.4"
   },
-  "optionalDependencies": {
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4"
-  },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@therealklanni/commitlint-config": "^0.1.0",
-    "@therealklanni/prettier-config": "^1.0.0",
     "eslint": "^7.27.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.0.2",
     "standard-version": "^9.0.0"
+  },
+  "optionalDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4"
   }
 }

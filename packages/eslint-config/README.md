@@ -1,4 +1,4 @@
-# eslint-config ![npm downloads](https://img.shields.io/npm/dt/@therealklanni/eslint-config?logo=npm)
+# `@therealklanni/eslint-config` ![npm downloads](https://img.shields.io/npm/dt/@therealklanni/eslint-config?logo=npm)
 
 This package provides multiple eslint-configurations. You should extend the appropriate config
 depending on your use-case.

@@ -1,8 +1,48 @@
 {
   "name": "root",
+  "scripts": {
+    "format:etc": "pretty-quick --staged --verbose --pattern '*.?(js|json|md|y?[a]ml)'",
+    "format:pkg": "format-package -w",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "yarn format:etc"
+    ],
+    "**/*.js": [
+      "eslint --fix"
+    ],
+    "**/package.json": [
+      "yarn format:pkg"
+    ]
+  },
+  "prettier": "@therealklanni/prettier-config",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/prompt-cli": "^12.1.4",
+    "@therealklanni/commitlint-config": "^0.1.0",
+    "@therealklanni/prettier-config": "^1.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "format-package": "^6.1.0",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0"
   }
 }
