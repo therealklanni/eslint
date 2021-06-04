@@ -1,6 +1,6 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "independent"
+  "$schema": "http://json.schemastore.org/lerna.json",
+  "version": "independent",
+  "useWorkspaces": true,
+  "npmClient": "yarn"
 }
