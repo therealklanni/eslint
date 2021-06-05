@@ -1,3 +1,61 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 1.0.0-beta.0 (2021-06-05)
+
+
+### Bug Fixes
+
+* **base:** turn off require-await ([e4a69bc](https://github.com/therealklanni/eslint/commit/e4a69bc3e7b42f465f50747562697b250cbc2fad))
+* **deps:** prettier-cra missing packages ([6157612](https://github.com/therealklanni/eslint/commit/6157612f151ae3ebfed785832f0f06197716b6dc))
+* **jest:** update rule name ([389175c](https://github.com/therealklanni/eslint/commit/389175cab4c0437ea9d0df9a6ed8b0d66f785191))
+* **publish:** remove scripts from ignore ([a71faba](https://github.com/therealklanni/eslint/commit/a71faba25b7865871e7dfd10f53d3c85fc895040))
+* **scripts:** use bash explicitly ([fea6951](https://github.com/therealklanni/eslint/commit/fea695174b360d0479d44c14d39440901438d030))
+* **typescript:** remove no-untyped-public-signature ([8ffa5b8](https://github.com/therealklanni/eslint/commit/8ffa5b83670c3748ec9b407eecd240f4983f6ef0))
+* **typescript:** turn off conflicting rules ([912c007](https://github.com/therealklanni/eslint/commit/912c00707826fd1043726b8a05a0b1c0c8d7f689))
+* **typescript:** turn off require-await ([a049d2a](https://github.com/therealklanni/eslint/commit/a049d2a6ddf2f5bdd4e988dc488cf74d79eb0978))
+* prettier compatibility ([ef1bde2](https://github.com/therealklanni/eslint/commit/ef1bde20753953f8d861a946bb2844233cdd59af))
+* remove unneeded eslint-disable ([007e858](https://github.com/therealklanni/eslint/commit/007e858ae5fa4315384ec1eec769b7ac85cd11d2))
+
+
+### Features
+
+* update configs ([222128f](https://github.com/therealklanni/eslint/commit/222128f3f8fe4c6f13518804fbfafee5254b4aff))
+* **node-cli:** change no-console to warn ([2c1591b](https://github.com/therealklanni/eslint/commit/2c1591b9f4c2fe6fae0d58519a317fe0e64cebf8))
+* **typescript:** update explicit-member-accessibility ([f087dc9](https://github.com/therealklanni/eslint/commit/f087dc92d969cd6edeaa6ac3603b375b40e9b284))
+* add [@deps](https://github.com/deps) helper ([ef10a96](https://github.com/therealklanni/eslint/commit/ef10a96ac3b539852c881f03ba98162da1299375))
+* add jest config ([7ec8f75](https://github.com/therealklanni/eslint/commit/7ec8f75ce3b661e1cb07d8aa33405f23048bac32))
+* add jest to installer ([37fd2c6](https://github.com/therealklanni/eslint/commit/37fd2c61a3562fc657808051c2dc6824e6f4fbee))
+* add jsx bare configs ([2cc7d40](https://github.com/therealklanni/eslint/commit/2cc7d40a59dd17c46b81012b3bd85a220cf5d52e))
+* add node-cli configs ([46bcdea](https://github.com/therealklanni/eslint/commit/46bcdea87ad56702736253bad752b5914c79c78a))
+* add prettier jsx configs ([07e8249](https://github.com/therealklanni/eslint/commit/07e8249af22dbbee84691b7aefb2b07b326e8664))
+* add typescript configs ([efe04b9](https://github.com/therealklanni/eslint/commit/efe04b953c8607c18103b9d43a883453416e90aa))
+* add typescript to jsx ([f7a450e](https://github.com/therealklanni/eslint/commit/f7a450e74e19dfd79aa5bfd0af0592b567046173))
+* make node supplementary ([5950a86](https://github.com/therealklanni/eslint/commit/5950a86778dcbd5dadb43676d521331a80a65c43))
+* rename typescript-prettier ([464db22](https://github.com/therealklanni/eslint/commit/464db220a275e6aace742233e41ee894b0d7cea9))
+* **base:** add import grouping ([3bb1073](https://github.com/therealklanni/eslint/commit/3bb1073f8ab36bfae75923519a0d5cdc1d76ab06))
+* **base:** add rules ([91ba0bc](https://github.com/therealklanni/eslint/commit/91ba0bcf847e1edf1fbfd7e20d8b9b25cc52769a))
+* **base:** allow expressions to be unpadded ([1bddcee](https://github.com/therealklanni/eslint/commit/1bddcee3b88cbbd2862ae52d9508affcc2f5b9a6))
+* **base:** enforce newlines between import groups ([a0d9fca](https://github.com/therealklanni/eslint/commit/a0d9fcab6829024c154cd8325c7a0bcb6b3ad0f6))
+* **base:** ignore underscored unused vars ([f3dede4](https://github.com/therealklanni/eslint/commit/f3dede468eb553a72a86ed4c2e30713337834d6f))
+* **base:** improve class members rule ([004e5ad](https://github.com/therealklanni/eslint/commit/004e5ad8e56ef79d395c6da6f5c2e77d9544090e))
+* **node:** add rules ([2fa849e](https://github.com/therealklanni/eslint/commit/2fa849e3aaf104b10a72d58973b3b4a6e3a7c86f))
+* **node:** set sourceType:module ([6af51aa](https://github.com/therealklanni/eslint/commit/6af51aa791eb0db1e6851cbcd7919c3536e250ae))
+* remove no-underscore-dangle ([1976c96](https://github.com/therealklanni/eslint/commit/1976c961d2c9a964bfb8bce36ccdda3cdd53a866))
+
+
+### BREAKING CHANGES
+
+* for consistency, `typescript-prettier` config is now
+`prettier-typescript`.
+* node config no longer extends base config.
+
+
+
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
