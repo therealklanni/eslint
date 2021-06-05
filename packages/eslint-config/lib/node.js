@@ -20,6 +20,7 @@ module.exports = {
     'node/no-sync': 'error',
     'node/exports-style': 'error',
     'node/prefer-promises/dns': 'error',
-    'node/prefer-promises/fs': 'error'
+    'node/prefer-promises/fs': 'error',
+    'node/no-unpublished-require': 'off'
   }
 }
