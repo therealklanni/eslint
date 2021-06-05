@@ -12,7 +12,7 @@
     "eslintconfig",
     "therealklanni"
   ],
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
     "lint": "eslint .",
