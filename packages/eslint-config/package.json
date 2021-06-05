@@ -16,7 +16,6 @@
   "scripts": {
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
     "lint": "eslint .",
-    "postinstall": "/usr/bin/env bash ./scripts/postinstall.sh",
     "release": "standard-version",
     "postrelease": "git push --follow-tags origin master && npm publish",
     "release:pre": "standard-version --prerelease",
