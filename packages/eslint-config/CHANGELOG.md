@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-beta.11](https://github.com/therealklanni/eslint/compare/@therealklanni/eslint-config@1.0.0-beta.0...@therealklanni/eslint-config@1.0.0-beta.11) (2021-06-05)
+
+
+### Features
+
+* disable node/no-unpublished-require ([c67063d](https://github.com/therealklanni/eslint/commit/c67063d23c9acf84321d9b5ddc9cf630d9fd2eab))
+* ecmaVersion 2020 ([8f66bdb](https://github.com/therealklanni/eslint/commit/8f66bdbb3da333d7150d2c67c74ea6fd6b0303d8))
+
+
+
 # 1.0.0-beta.0 (2021-06-05)
 
 
