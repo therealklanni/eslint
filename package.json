@@ -4,7 +4,7 @@
     "format:etc": "pretty-quick --staged --verbose --pattern '*.?(js|json|md|y?[a]ml)'",
     "format:pkg": "format-package -w",
     "prepare": "husky install",
-    "publish:canary": "lerna publish --canary --dist-tag next",
+    "publish:canary": "lerna publish --preid beta --canary --dist-tag next",
     "publish:latest": "lerna publish",
     "version:beta": "dotenv -- lerna version --preid beta",
     "version:grad": "dotenv -- lerna version --conventional-graduate"
