@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 module.exports = {
   env: { es6: true, browser: true },
-  parserOptions: { ecmaVersion: 12 },
+  parserOptions: { ecmaVersion: 2020 },
   plugins: ['import'],
   extends: ['eslint:recommended', 'plugin:import/errors'],
   rules: {
