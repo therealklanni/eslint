@@ -32,6 +32,9 @@
   "eslintIgnore": [
     "test.js"
   ],
+  "files": [
+    "*"
+  ],
   "gitHead": "8b11f98ef107e6e2ef740e3adab31b6777ce4e3d",
   "publishConfig": {
     "access": "public",
