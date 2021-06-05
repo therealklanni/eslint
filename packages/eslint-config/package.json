@@ -1,6 +1,6 @@
 {
   "name": "@therealklanni/eslint-config",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.6+2ba2447",
   "description": "Shareable ESLint config",
   "license": "MIT",
   "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
@@ -15,7 +15,9 @@
   "main": "lib/index.js",
   "scripts": {
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postpublish": "rm -rf dist",
+    "prepack": "mkdir -p dist; cp lib/* dist; cp ../../LICENSE.txt README.md package.json dist"
   },
   "directories": {
     "lib": "lib",
@@ -30,11 +32,10 @@
   "eslintIgnore": [
     "test.js"
   ],
-  "files": [
-    "lib"
-  ],
+  "gitHead": "2ba2447c2b2d7d35c6c86281a840f723a0a218b5",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
   "repository": {
     "type": "git",
