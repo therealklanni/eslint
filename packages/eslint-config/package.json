@@ -15,11 +15,7 @@
   "main": "lib/index.js",
   "scripts": {
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
-    "lint": "eslint .",
-    "release": "standard-version",
-    "postrelease": "git push --follow-tags origin master && npm publish",
-    "release:pre": "standard-version --prerelease",
-    "postrelease:pre": "git push --follow-tags origin master && npm publish --tag prerelease"
+    "lint": "eslint ."
   },
   "directories": {
     "lib": "lib",
@@ -45,23 +41,16 @@
     "url": "git+https://github.com/therealklanni/eslint.git"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.27.0",
     "eslint-plugin-import": "^2.23.4"
   },
-  "devDependencies": {
-    "eslint": "^7.27.0",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
-    "pretty-quick": "^3.0.2",
-    "standard-version": "^9.0.0"
-  },
   "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4"
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.3.0"
   }
 }
