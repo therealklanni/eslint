@@ -17,7 +17,7 @@
     "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
     "lint": "eslint .",
     "postpublish": "rm -rf dist",
-    "prepack": "mkdir -p dist; cp lib/* dist; cp ../../LICENSE.txt README.md package.json dist"
+    "prepack": "mkdir -p dist; cp ../../LICENSE.txt README.md package.json *.js dist"
   },
   "directories": {
     "lib": "lib",
@@ -25,8 +25,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "./lib/prettier",
-      "./lib/node"
+      "./prettier",
+      "./node"
     ]
   },
   "eslintIgnore": [
