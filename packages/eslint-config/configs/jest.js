@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['jest'],
+  plugins: ['jest', 'jest-formatting'],
   extends: ['plugin:jest/recommended'],
   env: { 'jest/globals': true },
   rules: {
@@ -21,6 +21,7 @@ module.exports = {
     'jest/prefer-todo': 'error',
     'jest/require-top-level-describe': 'error',
     'jest/require-to-throw-message': 'error',
-    'jest/valid-title': 'error'
+    'jest/valid-title': 'error',
+    'jest-formatting/padding-around-all': 'error'
   }
 }
