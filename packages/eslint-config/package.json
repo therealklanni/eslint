@@ -14,10 +14,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "@deps": "/usr/bin/env bash ./scripts/dev-deps.sh",
-    "lint": "eslint .",
-    "postpublish": "rm -rf dist",
-    "prepack": "mkdir -p dist; cp ../../LICENSE.txt README.md package.json *.js dist"
+    "lint": "eslint ."
   },
   "directories": {
     "lib": ".",
@@ -51,6 +48,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jest-formatting": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.24.0",
@@ -71,6 +70,12 @@
       "optional": true
     },
     "eslint-plugin-jest": {
+      "optional": true
+    },
+    "eslint-plugin-jest-formatting": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
       "optional": true
     },
     "eslint-plugin-node": {

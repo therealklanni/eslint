@@ -1,7 +1,6 @@
-.vscode/
+.npmignore
+.gitignore
 .editorconfig
-.nvmrc
-commitlint.config.js
 test.ts
 test.js
 scripts/
