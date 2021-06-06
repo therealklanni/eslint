@@ -20,7 +20,7 @@
     "prepack": "mkdir -p dist; cp ../../LICENSE.txt README.md package.json *.js dist"
   },
   "directories": {
-    "lib": "lib",
+    "lib": ".",
     "test": "__tests__"
   },
   "eslintConfig": {
@@ -37,8 +37,7 @@
   ],
   "gitHead": "8b11f98ef107e6e2ef740e3adab31b6777ce4e3d",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "repository": {
     "type": "git",
