@@ -1,6 +1,6 @@
 {
   "name": "@therealklanni/eslint-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ESLint plugin",
   "license": "MIT",
   "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
@@ -46,7 +46,7 @@
     "eslint-plugin-import": "^2.23.4"
   },
   "devDependencies": {
-    "@therealklanni/eslint-config": "1.0.0-beta.16",
+    "@therealklanni/eslint-config": "^1.0.0-beta.17",
     "@therealklanni/prettier-config": "^1.0.0",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
