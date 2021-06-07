@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-beta.16](https://github.com/therealklanni/eslint/compare/@therealklanni/eslint-config@1.0.0-beta.15...@therealklanni/eslint-config@1.0.0-beta.16) (2021-06-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* update react config
+* update node configs
+* add jest-formatting to jest
+* make prettier independent
+
+### Features
+
+* add jest-formatting to jest ([831f69b](https://github.com/therealklanni/eslint/commit/831f69ba4d30b3d888780fec2480f678a0fe5ab5))
+* make prettier independent ([ed80168](https://github.com/therealklanni/eslint/commit/ed801683fcff4995b0d0a44b7ad13040449b7f52))
+* update node configs ([d38953c](https://github.com/therealklanni/eslint/commit/d38953c315543abff9fabf682354f20491a1721a))
+* update react config ([7cb238b](https://github.com/therealklanni/eslint/commit/7cb238ba350b8eab10acdeac7c2a685519148ad1))
+
+
+
 ## [1.0.0-beta.15](https://github.com/therealklanni/eslint/compare/@therealklanni/eslint-config@1.0.0-beta.14...@therealklanni/eslint-config@1.0.0-beta.15) (2021-06-06)
 
 **Note:** Version bump only for package @therealklanni/eslint-config
