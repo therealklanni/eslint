@@ -22,8 +22,9 @@
   },
   "eslintConfig": {
     "extends": [
-      "./prettier",
-      "./node"
+      ".",
+      "./node",
+      "./prettier"
     ]
   },
   "eslintIgnore": [
@@ -33,6 +34,7 @@
     "*"
   ],
   "gitHead": "8b11f98ef107e6e2ef740e3adab31b6777ce4e3d",
+  "prettier": "@therealklanni/prettier-config",
   "publishConfig": {
     "access": "public"
   },
@@ -93,5 +95,16 @@
     "prettier": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@therealklanni/prettier-config": "^1.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jest-formatting": "^3.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1"
   }
 }
