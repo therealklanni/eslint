@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@therealklanni/eslint-plugin provides eslint configs 1`] = `
+Object {
+  "base": Object {
+    "extends": Array [
+      "./configs/base",
+    ],
+  },
+  "cli": Object {
+    "extends": Array [
+      "../configs/cli",
+    ],
+  },
+  "jest": Object {
+    "extends": Array [
+      "../configs/jest",
+    ],
+  },
+  "node": Object {
+    "extends": Array [
+      "../configs/node",
+    ],
+  },
+  "prettier": Object {
+    "extends": Array [
+      "../configs/prettier",
+    ],
+  },
+  "react": Object {
+    "extends": Array [
+      "../configs/react",
+    ],
+  },
+  "typescript": Object {
+    "extends": Array [
+      "../configs/typescript",
+    ],
+  },
+}
+`;

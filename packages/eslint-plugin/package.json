@@ -1,0 +1,61 @@
+{
+  "name": "@therealklanni/eslint-plugin",
+  "version": "0.1.0",
+  "description": "ESLint plugin",
+  "license": "MIT",
+  "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
+  "homepage": "https://github.com/therealklanni/eslint/tree/master/packages/eslint-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/therealklanni/eslint/issues"
+  },
+  "keywords": [
+    "eslintplugin",
+    "therealklanni"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@therealklanni",
+      "@therealklanni/eslint-config/node",
+      "@therealklanni/eslint-config/jest/auto",
+      "@therealklanni/eslint-config/prettier"
+    ]
+  },
+  "files": [
+    "lib"
+  ],
+  "prettier": "@therealklanni/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therealklanni/eslint.git"
+  },
+  "peerDependencies": {
+    "@therealklanni/eslint-config": "1.0.0-beta.16",
+    "eslint": "^7.28.0",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "devDependencies": {
+    "@therealklanni/eslint-config": "1.0.0-beta.16",
+    "@therealklanni/prettier-config": "^1.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jest-formatting": "^3.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1"
+  }
+}
