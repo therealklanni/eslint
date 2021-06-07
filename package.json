@@ -9,18 +9,13 @@
     "version:beta": "dotenv -- lerna version --preid beta",
     "version:grad": "dotenv -- lerna version --conventional-graduate"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "**": [
       "yarn format:etc"
     ],
     "**/*.js": [
-      "eslint --fix"
+      "eslint --fix",
+      "lerna run test -- --findRelatedTests"
     ],
     "**/package.json": [
       "yarn format:pkg"
