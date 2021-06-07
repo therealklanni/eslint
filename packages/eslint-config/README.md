@@ -1,116 +1,148 @@
 # `@therealklanni/eslint-config` ![npm downloads](https://img.shields.io/npm/dt/@therealklanni/eslint-config?logo=npm)
 
-This package provides multiple eslint-configurations. You should extend the appropriate config
-depending on your use-case.
+> _**❗️ It's not recommended to use these configs directly. Instead, install and
+> configure them via [@therealklanni/eslint-config](../eslint-plugin/README.md),
+> for ease-of-use.**_
 
-Each rule and its associated configuration has been selected with the following goals in mind:
+This package provides multiple eslint-configurations that configure popular
+ESLint plugins. You should extend the appropriate config depending on your
+use-case.
 
-- Maximum readability/understanding of your code
-- Maximum (ease of) refactorability of your code
-- Reduce or catch common pitfalls and code-smells
-- Adhere to commonest best practices
-- Any rules that might cause excessive errors (that are not auto-fixable) are set to "warn"
+---
 
-For these reasons, much of the rules are enabled and most are using the default configuration
-except where it makes sense for achieving said goals. When used with Prettier, conflicting rules
-are disabled.
+These configs provide an _**opinionated**_ set of rules that:
+
+1. Help you adhere to best practices.
+1. Help catch probable issue vectors in your code (common pitfalls and
+   code-smells).
+1. Maximize readability/understanding of your code.
+1. Maximize (ease of) maintaining/refactoring your code.
+
+> Any rules that might cause excessive errors and are not auto-fixable are set
+> to "warn".
+
+For these reasons, many of the rules are enabled and, of those, most are using
+the default configuration except where it makes sense for achieving said goals.
+When used with Prettier, conflicting rules are disabled.
 
 > 💁‍♂️ You might also consider using
 > [@therealklanni/prettier-config](https://github.com/therealklanni/prettier-config)
 
-## Installation
+## Available configurations (and what they configure)
 
-```sh
-npm install --save-dev @therealklanni/eslint-config
-```
-
-## Post install
-
-After installation, you'll be prompted to install the devDependencies requirements. The command is
-as follows. Replace `CONFIG_NAME` with the name of the config (as shown in [Provided
-configurations](#provided-configurations)). Use the command again for any additional [Supplemental
-configurations](#supplemental-configurations).
-
-```
-npm explore @therealklanni/eslint-config -- npm run @deps CONFIG_NAME $(pwd)
-```
-
-> This command will automatically install the necessary devDependencies after confirmation. Note
-> that `$(pwd)` is required to tell the script where to install the dependencies, or you can supply
-> the path manually.
-
-> If you prefer to install the devDependencies on your own, they will be listed before confirmation
-> and then you can cancel the script (press `n` or `Ctrl-C`).
+- `@therealklanni` _(base config)_
+- `@therealklanni/eslint-config/typescript`
+  - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
+- `@therealklanni/eslint-config/react`
+  - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+  - [eslint-plugin-react-hooks](https://github.com/yannickcr/eslint-plugin-react)
+  - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+- `@therealklanni/eslint-config/jest`
+  - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+  - [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
+- `@therealklanni/eslint-config/node` or `@therealklanni/eslint-config/cli`
+  - [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node)
+- `@therealklanni/eslint-config/prettier` _(Note: make sure this is always the **last** config)_
+  - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 
 ## Usage
 
-In your ESLint config, extend the config you want to use. The configs provided are not intended to
-be combinatory, please use only the provided config that most closely suits your use-case (in other
-words, pick only one).
+1. Install required dependencies
+   ```
+   npm install -D @therealklanni/eslint-config eslint{,-plugin-import}
+   ```
+2. Optionally, view and install any additional dependencies, as needed
+   ```
+   # list dependencies
+   yarn view @therealklanni/eslint-config peerDependencies
 
-See [Provided configurations](#provided-configurations) for a list of available configs.
+   # install what you need
+   yarn add -D eslint-plugin-{jest,node,react} @therealklanni/prettier-config ...
+   ```
+2. Configure as shown here
+   ```jsonc
+   {
+     // you only need to specify plugins not provided by these configs
+     "plugins": ["some-other-plugin"],
+     "extends": [
+       // add one or more configs, AFTER any other configs
+       "@therealklanni/eslint-config/typescript",
+       "@therealklanni/eslint-config/jest"
+     ],
+     // override any rules, if needed
+     "rules": {
+       "@typescript-eslint/semi": ["error", "always"]
+     }
+   }
+   ```
+3. ???
+4. Profit
 
-```json
+### "Hard mode"
+
+DIY file globs. Allows for more control over how configs are applied.
+
+```jsonc
 {
-  "eslintConfig": {
-    "extends": ["@therealklanni"]
-  }
-}
-```
-
-The example above would extend only the base configuration. To use a more specific configuration,
-use the following example below as a guideline.
-
-```json
-{
-  "eslintConfig": {
-    "extends": ["@therealklanni/eslint-config/prettier-node"]
-  }
-}
-```
-
-> Note: if you would like to extend other configs in addition to those provided by this package,
-> it's recommended to define the config from this package **last** to avoid conflicts.
-
-## Provided configurations
-
-To see the exact rules applied by each config, view the related source file. Each config extends
-the `base` config, and more specific configs combine and extend the configs with matching names.
-For example, `prettier-node` extends `prettier` and `node` configs, which themselves extend from
-`base`, which in turn extends from `eslint:recommended`.
-
-Not all rules found in the sources will necessarily apply, depending on the config used. For
-example, all Prettier-based configs will automatically disable rules that would otherwise conflict
-with how Prettier formats automatically.
-
-- `base` — extends the `eslint:recommended` config, with added base rules
-- `prettier` — formats with Prettier
-- `typescript` — TypeScript via
-  [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
-- `prettier-typescript` — TS with Prettier
-- `jsx` — JSX
-- `jsx-cra` — `eslint-config-react-app` config provided by
-  [create-react-app](https://github.com/facebook/create-react-app) with JSX defaults
-  > Use this when you want CRA's JSX defaults in a non-CRA project
-
-### Supplemental configurations
-
-These configurations can be included (via extends) as supplementary to the above, or used
-stand-alone. They do not extend the base or other configs and instead just provide a set of
-sensible defaults for a specific plugin.
-
-- `node` — configures [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node)
-- `node-cli`
-- `jest` — configures [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
-
-#### Example usage:
-
-```json
-{
-  "extends": [
-    "@therealklanni/eslint-config/jest",
-    "@therealklanni/eslint-config/node",
-    "@therealklanni/eslint-config/prettier-typescript"
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "extends": ["@therealklanni"],
+      "rules": {
+        "semi": ["error", "always"]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "some-other-config",
+        "@therealklanni/eslint-config/typescript"
+      ],
+      "rules": {
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/init-declarations": "off"
+      }
+    },
+    {
+      "files": ["**/__tests__/**"],
+      "extends": ["@therealklanni/eslint-config/jest"],
+      "rules": {
+        "jest/no-if": "warn"
+      }
+    },
+    // Apply last when using Prettier config
+    {
+      "files": ["*.?(ts,js)"],
+      "extends": ["@therealklanni/eslint-config/prettier"]
+    }
   ]
 }
 ```
+
+### "Easy mode"
+
+Applies configs automatically wrapped in an `override` with a default `files`
+glob.
+
+```jsonc
+{
+  "extends": [
+    "some-other-config",
+    // apply @therealklanni configs after any others
+    "@therealklanni/eslint-config/jest/auto",
+    "@therealklanni/eslint-config/typescript/auto",
+    // applied globally
+    "@therealklanni/eslint-config/prettier"
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/init-declarations": "off",
+    "jest/no-if": "warn"
+  }
+}
+```
+
+> Note: the `prettier`, `node`, and `cli` configs do not have an "auto" config,
+> as these don't typically require an override.
