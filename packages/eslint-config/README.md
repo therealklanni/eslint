@@ -1,7 +1,7 @@
 # `@therealklanni/eslint-config` ![npm downloads](https://img.shields.io/npm/dt/@therealklanni/eslint-config?logo=npm)
 
 > _**❗️ It's not recommended to use these configs directly. Instead, install and
-> configure them via [@therealklanni/eslint-config](../eslint-plugin/README.md),
+> configure them via [@therealklanni/eslint-plugin](../eslint-plugin/README.md),
 > for ease-of-use.**_
 
 This package provides multiple eslint-configurations that configure popular
@@ -22,15 +22,15 @@ These configs provide an _**opinionated**_ set of rules that:
 > to "warn".
 
 For these reasons, many of the rules are enabled and, of those, most are using
-the default configuration except where it makes sense for achieving said goals.
-When used with Prettier, conflicting rules are disabled.
+the recommended configuration except where it makes sense for achieving said
+goals. When used with Prettier, conflicting rules are disabled.
 
 > 💁‍♂️ You might also consider using
 > [@therealklanni/prettier-config](https://github.com/therealklanni/prettier-config)
 
 ## Available configurations (and what they configure)
 
-- `@therealklanni` _(base config)_
+- `@therealklanni` _(base config must always be applied)_
 - `@therealklanni/eslint-config/typescript`
   - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)
 - `@therealklanni/eslint-config/react`
@@ -42,7 +42,8 @@ When used with Prettier, conflicting rules are disabled.
   - [eslint-plugin-jest-formatting](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 - `@therealklanni/eslint-config/node` or `@therealklanni/eslint-config/cli`
   - [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node)
-- `@therealklanni/eslint-config/prettier` _(Note: make sure this is always the **last** config)_
+- `@therealklanni/eslint-config/prettier` _(Note: make sure this is always the
+  **last** config)_
   - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 
@@ -64,9 +65,10 @@ When used with Prettier, conflicting rules are disabled.
    ```jsonc
    {
      // you only need to specify plugins not provided by these configs
-     "plugins": ["some-other-plugin"],
+     "plugins": ["some-unrelated-plugin"],
      "extends": [
-       // add one or more configs, AFTER any other configs
+       // add one or more configs, AFTER any unrelated configs
+       "@therealklanni",
        "@therealklanni/eslint-config/typescript",
        "@therealklanni/eslint-config/jest"
      ],
@@ -79,13 +81,18 @@ When used with Prettier, conflicting rules are disabled.
 3. ???
 4. Profit
 
-### "Hard mode"
+### "Hard mode" example
 
 DIY file globs. Allows for more control over how configs are applied.
 
 ```jsonc
 {
+  "extends": [
+    // apply last
+    "@therealklanni"
+  ],
   "overrides": [
+    // if you need other unrelated overrides, add them first
     {
       "files": ["*.js"],
       "extends": ["@therealklanni"],
@@ -96,7 +103,8 @@ DIY file globs. Allows for more control over how configs are applied.
     {
       "files": ["*.ts"],
       "extends": [
-        "some-other-config",
+        "some-unrelated-config",
+        "@therealklanni",
         "@therealklanni/eslint-config/typescript"
       ],
       "rules": {
@@ -111,7 +119,7 @@ DIY file globs. Allows for more control over how configs are applied.
         "jest/no-if": "warn"
       }
     },
-    // Apply last when using Prettier config
+    // apply last when using Prettier config
     {
       "files": ["*.?(ts,js)"],
       "extends": ["@therealklanni/eslint-config/prettier"]
@@ -120,7 +128,7 @@ DIY file globs. Allows for more control over how configs are applied.
 }
 ```
 
-### "Easy mode"
+### "Easy mode" example
 
 Applies configs automatically wrapped in an `override` with a default `files`
 glob.
@@ -128,8 +136,9 @@ glob.
 ```jsonc
 {
   "extends": [
-    "some-other-config",
-    // apply @therealklanni configs after any others
+    "some-unrelated-config",
+    // apply @therealklanni configs after unrelated configs
+    "@therealklanni",
     "@therealklanni/eslint-config/jest/auto",
     "@therealklanni/eslint-config/typescript/auto",
     // applied globally
